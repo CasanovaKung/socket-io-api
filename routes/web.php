@@ -16,5 +16,8 @@ Route::get('/', function () {
 });
 
 Auth::routes();
+Route::group(['prefix' => 'realtime'], function() {
+	Route::post('login', 'LoginController@postLogin');
+});
 
 Route::get('/home', 'HomeController@index')->name('home');
